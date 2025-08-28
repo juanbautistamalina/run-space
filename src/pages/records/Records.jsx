@@ -1,6 +1,8 @@
+import "./Records.css"
+
 function Records() {
   return (
-    <div>Records</div>
+    <h1>Records Personales</h1>
   )
 }
 

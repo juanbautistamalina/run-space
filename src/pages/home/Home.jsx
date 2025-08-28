@@ -1,12 +1,8 @@
-import Header from "../../components/Header"
-import NavBar from "../../components/NavBar"
+import "./Home.css"
 
 function Home() {
   return (
-    <>
-      <Header />
-      <NavBar />
-    </>
+    <h1>Inicio</h1>
   )
 }
 

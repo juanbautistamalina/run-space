@@ -1,0 +1,29 @@
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.layout__sidebar {
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+}
+
+.layout__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout__header {
+  height: 60px;
+  background-color: #ddd;
+}
+
+.layout__content {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: #dfdfdf;
+}
