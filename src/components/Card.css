@@ -1,0 +1,119 @@
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.card {
+  max-width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.card__img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.card__info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 0 10px 0;
+}
+
+.card__title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.card__distance {
+  font-size: 1em;
+  background-color: #efefef;
+  color: #222;
+  font-weight: 500;
+  padding: 0.5em;
+  border-radius: 50px;
+}
+
+.card__stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.card__total-time,
+.card__pace {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 0.5em;
+  gap: 0.5em;
+}
+
+.card__total-time-label,
+.card__pace-label {
+  color: #666;
+  font-weight: 500;
+}
+
+.card__total-time-value,
+.card__pace-value {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.card__trophy {
+  color: #f39c12;
+}
+
+.card__divider {
+  border: none;
+  border-top: 2px dashed #888;
+  margin: 1rem 0;
+}
+
+.card__additional-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.card__position, .card__date, .card__place {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: #666;
+}
+
+.card__position-icon, .card__date-icon, .card__place-icon {
+    font-size: 1.2em;
+}
+
+.card__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+    font-size: 1.2em;
+    padding-right: 10px;
+}
+
+.card__actions svg {
+    cursor: pointer;
+    color: #666;
+}
+.card__actions svg:hover {
+    color: #000;
+}
