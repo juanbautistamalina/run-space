@@ -4,15 +4,7 @@ import { IoAdd } from "react-icons/io5";
 import { LuSettings2 } from "react-icons/lu";
 import "./Header.css"
 
-function handleFilterClick() {
-  // Lógica para filtrar las carreras
-}
-
-function handleAddClick() {
-  // Lógica para agregar una nueva carrera
-}
-
-function Header() {
+function Header({ filter, add }) {
   return (
     <header className="header">
       <h1 className="header__title">
@@ -26,11 +18,11 @@ function Header() {
       </div>
 
       <div className="header__button-container">
-        <button className="header__button" onClick={handleFilterClick}>
+        <button className="header__button" onClick={filter}>
           <LuSettings2 />
           Filtrar
         </button>
-        <button className="header__button" onClick={handleAddClick}>
+        <button className="header__button" onClick={add}>
           <IoAdd />
           Agregar Carrera
         </button>
