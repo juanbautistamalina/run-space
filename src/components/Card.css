@@ -21,15 +21,18 @@
 
 .card__info {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-between;
+  gap: 10px;
   margin: 0 0 10px 0;
 }
 
 .card__title {
   font-size: 1.2em;
   font-weight: bold;
+  margin: 0;
+  max-width: calc(100% - 60px); /* deja espacio suficiente para la distancia */
+  overflow-wrap: break-word; /* permite que el título haga wrap si es muy largo */
   margin: 10px 0;
 }
 
@@ -40,6 +43,8 @@
   font-weight: 500;
   padding: 0.5em;
   border-radius: 50px;
+  flex-shrink: 0; /* no se encoge */
+  white-space: nowrap; /* mantiene el km en una sola línea */
 }
 
 .card__stats {

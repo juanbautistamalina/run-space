@@ -1,8 +1,9 @@
 import { PiSneakerMoveFill } from "react-icons/pi";
 import { CiSearch } from "react-icons/ci";
-import { IoAdd } from "react-icons/io5";
 import { LuSettings2 } from "react-icons/lu";
-import "./Header.css"
+import { IoAdd } from "react-icons/io5";
+import AddRaceModal from "./AddRaceModal";
+import "./Header.css";
 
 function Header({ filter, add }) {
   return (
@@ -18,17 +19,20 @@ function Header({ filter, add }) {
       </div>
 
       <div className="header__button-container">
-        <button className="header__button" onClick={filter}>
+        <button className="header__button header__button--filter" onClick={filter}>
           <LuSettings2 />
           Filtrar
         </button>
-        <button className="header__button" onClick={add}>
-          <IoAdd />
-          Agregar Carrera
-        </button>
+
+        <AddRaceModal onAdd={add}>
+          <button className="header__button header__button--add">
+            <IoAdd />
+            Agregar Carrera
+          </button>
+        </AddRaceModal>
       </div>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

@@ -9,7 +9,7 @@ import "./Card.css"
 function Card({ title, img, distance, totalTime, pace, position, date, place, isPR }) {
     return (
         <div className="card">
-            <img src={img} alt={title} className="card__img" />
+            {img && <img src={img} alt={title} className="card__img" />}
 
             <div className="card__info">
                 <h2 className="card__title">{title}</h2>
@@ -30,7 +30,6 @@ function Card({ title, img, distance, totalTime, pace, position, date, place, is
             <hr className="card__divider" />
 
             <div className="card__additional-info">
-
                 <div className="card__position">
                     <IoIosPodium className="card__position-icon" />
                     <p className="card__position-value">{position}</p>
@@ -46,6 +45,7 @@ function Card({ title, img, distance, totalTime, pace, position, date, place, is
                     <p className="card__place-value">{place}</p>
                 </div>
             </div>
+
             <div className="card__actions">
                 <RiDeleteBin6Fill />
                 <TbEditCircle />

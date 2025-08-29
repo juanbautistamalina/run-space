@@ -4,6 +4,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1em;
   gap: 2em;
+  align-items: center;
 }
 
 .header__title {
@@ -59,8 +60,6 @@
   padding: 1em;
   border-radius: 8px;
   border: none;
-  background-color: #2563eb;
-  color: #fff;
   transition: background-color 0.2s ease;
 }
 
@@ -68,16 +67,20 @@
   font-size: 1.2em;
 }
 
-
-.header__button:nth-child(1) {
+.header__button--filter {
   background-color: #ddd;
   color: #222;
 }
 
-.header__button:nth-child(1):hover {
+.header__button--filter:hover {
   background-color: #bbb;
 }
 
-.header__button:nth-child(2):hover {
+.header__button--add {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.header__button--add:hover {
   background-color: #1e40af;
 }
