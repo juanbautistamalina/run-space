@@ -1,54 +1,83 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 1em;
-    gap: 2em;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  gap: 2em;
 }
 
 .header__title {
-    font-size: 1.5em;
-    display: flex;
-    align-items: center;
-    gap: 0.4em;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
 }
 
 .header__input-container {
-    position: relative;
-    display: inline-block;
-    flex: 0.8;
+  position: relative;
+  display: inline-block;
+  flex: 0.8;
 }
 
 .header__input {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    outline: 1px solid #333;
-    border: none;
-    padding: 1em;
-    padding-left: 2em;
-    border-radius: 5px;
-    transition: outline .1s ease;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  outline: 1px solid #333;
+  border: none;
+  padding: 1em;
+  padding-left: 2em;
+  border-radius: 5px;
+  transition: outline 0.1s ease;
 }
 
 .header__input:focus {
-    outline: 2px solid #777;
+  outline: 2px solid #777;
 }
 
 .header__input-icon {
-    position: absolute;
-    top: 50%;
-    left: 0.5em;
-    transform: translateY(-50%);
-    color: #333;
+  position: absolute;
+  top: 50%;
+  left: 0.5em;
+  transform: translateY(-50%);
+  color: #333;
+}
+
+.header__button-container {
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
 .header__button {
-    cursor: pointer;
-    padding: 1em;
-    border-radius: 8px;
-    border: none;
-    background-color: #2563EB;
-    color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+  padding: 1em;
+  border-radius: 8px;
+  border: none;
+  background-color: #2563eb;
+  color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.header__button svg {
+  font-size: 1.2em;
+}
+
+
+.header__button:nth-child(1) {
+  background-color: #ddd;
+  color: #222;
+}
+
+.header__button:nth-child(1):hover {
+  background-color: #bbb;
+}
+
+.header__button:nth-child(2):hover {
+  background-color: #1e40af;
 }

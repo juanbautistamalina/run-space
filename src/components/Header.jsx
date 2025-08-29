@@ -1,6 +1,16 @@
 import { PiSneakerMoveFill } from "react-icons/pi";
 import { CiSearch } from "react-icons/ci";
+import { IoAdd } from "react-icons/io5";
+import { LuSettings2 } from "react-icons/lu";
 import "./Header.css"
+
+function handleFilterClick() {
+  // Lógica para filtrar las carreras
+}
+
+function handleAddClick() {
+  // Lógica para agregar una nueva carrera
+}
 
 function Header() {
   return (
@@ -15,7 +25,16 @@ function Header() {
         <CiSearch className="header__input-icon" />
       </div>
 
-      <button className="header__button">Agregar</button>
+      <div className="header__button-container">
+        <button className="header__button" onClick={handleFilterClick}>
+          <LuSettings2 />
+          Filtrar
+        </button>
+        <button className="header__button" onClick={handleAddClick}>
+          <IoAdd />
+          Agregar Carrera
+        </button>
+      </div>
     </header>
   )
 }
