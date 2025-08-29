@@ -1,12 +1,76 @@
-# React + Vite
+# 🏃🏻 Run Space
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Run Space** es una aplicación web desarrollada con **React** que permite a corredores registrar y visualizar sus carreras de forma estética y organizada.  
+Más que un simple registro de tiempos y distancias, busca ser un espacio personal donde cada corredor pueda revivir y dar valor a sus experiencias deportivas.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Motivación
 
-## Expanding the ESLint configuration
+El proyecto nació de mi propia experiencia como corredor.  
+Después de cada competencia suelo escribir en un diario mis sensaciones, aprendizajes y emociones.  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Esa práctica me ayudó a comprender que las carreras no se reducen a números: también son recuerdos, historias y logros personales.  
+
+**Run Space** busca trasladar esa costumbre al mundo digital, creando una herramienta práctica y visualmente atractiva para almacenar no solo resultados, sino también momentos significativos.
+
+---
+
+## ⚙️ Tecnologías utilizadas
+
+- [React](https://react.dev/) – Librería principal para la construcción de la interfaz  
+- [React Router](https://reactrouter.com/) – Manejo de rutas y navegación  
+- [Radix UI](https://www.radix-ui.com/) – Componentes accesibles y modales  
+
+---
+
+## 🚀 Características
+
+- 📌 Registro de nuevas carreras con detalles como título, distancia, tiempo, ritmo, posición, fecha y ubicación  
+- 🏅 Posibilidad de marcar carreras como **récord personal (PR)**  
+- 🖼️ Soporte para imágenes de cada carrera  
+- 📊 Visualización de carreras en forma de **cards**  
+- 🔍 Filtrado automático de récords en la sección **Records**  
+
+---
+
+## 📷 Vista previa
+
+![Vista de Run Space](assets/screenshot.png)
+
+---
+
+## 🔧 Instalación y uso
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/tuusuario/run-space.git
+cd run-space
+
+# Instalar dependencias
+npm install
+
+# Iniciar el servidor de desarrollo
+npm run dev
+
+# Abrir en el navegador
+http://localhost:5173
+```
+
+---
+
+## 🗺️ Roadmap
+
+<!-- - ✅ Persistencia de datos con **localStorage** o integración con **Firebase/Supabase**   -->
+- 📊 Estadísticas globales (distancia total, mejores tiempos, promedios)  
+- 📝 Sección de diario para registrar experiencias post-carrera  
+
+---
+
+## 👤 Autor
+
+Desarrollado por **Juan Bautista Malina**
+
+- 🌐 [Portfolio](https://juanbautistamalina.github.io/portfolio/)  
+- 💻 [GitHub](https://github.com/juanbautistamalina)  
+- 💼 [LinkedIn](https://www.linkedin.com/in/juan-bautista-malina)  
