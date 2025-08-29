@@ -44,7 +44,7 @@ Esa práctica me ayudó a comprender que las carreras no se reducen a números: 
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/tuusuario/run-space.git
+git clone https://github.com/juanbautistamalina/run-space
 cd run-space
 
 # Instalar dependencias
