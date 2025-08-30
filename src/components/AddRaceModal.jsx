@@ -25,8 +25,8 @@ export default function AddRaceModal({ onAdd, children }) {
         type === "checkbox"
           ? checked
           : type === "file"
-          ? URL.createObjectURL(files[0])
-          : value,
+            ? URL.createObjectURL(files[0])
+            : value,
     }));
   };
 
@@ -135,15 +135,17 @@ export default function AddRaceModal({ onAdd, children }) {
               required
             />
 
-            <label>
+            <div className="modal__checkbox-group">
+              <label htmlFor="isPR">¿Fue récord personal?</label>
               <input
+                id="isPR"
                 type="checkbox"
                 name="isPR"
                 checked={form.isPR}
                 onChange={handleChange}
               />
-              ¿Fue récord personal?
-            </label>
+            </div>
+
 
             <div className="modal__actions">
               <button type="submit" className="btn btn-primary">
