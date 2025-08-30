@@ -51,13 +51,9 @@ function App() {
     setRaces(prev => [...prev, newRace]);
   }
 
-  const handleFilterClick = () => {
-    // Lógica para filtrar las carreras
-  }
-
   return (
     <Routes>
-      <Route element={<Layout filter={handleFilterClick} add={handleAddRace}/>}>
+      <Route element={<Layout add={handleAddRace} />}>
         <Route path="/" element={<Home data={races} />} />
         <Route path="/records" element={<Records data={races} />} />
         <Route path="/carreras-futuras" element={<CarrerasFuturas data={races} />} />
