@@ -48,6 +48,7 @@ function Home({ data, setData, allData }) {
         {data.map(race =>
           <Card
             key={race.id}
+            id={race.id}
             title={race.title}
             img={race.img}
             distance={race.distance}
@@ -56,7 +57,10 @@ function Home({ data, setData, allData }) {
             position={race.position}
             date={race.date}
             place={race.place}
-            isPR={race.isPR} />)
+            isPR={race.isPR}
+            data={data}
+            setData={setData}
+          />)
         }
       </div>
     </>
