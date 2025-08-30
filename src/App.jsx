@@ -47,14 +47,17 @@ function App() {
     }
   ]);
 
+  const [allData, setAllData] = useState([ ...races ]);
+
   const handleAddRace = (newRace) => {
     setRaces(prev => [...prev, newRace]);
+    setAllData(prev => [...prev, newRace]);
   }
 
   return (
     <Routes>
       <Route element={<Layout add={handleAddRace} />}>
-        <Route path="/" element={<Home data={races} />} />
+        <Route path="/" element={<Home data={races} setData={setRaces} allData={allData} />} />
         <Route path="/records" element={<Records data={races} />} />
         <Route path="/carreras-futuras" element={<CarrerasFuturas data={races} />} />
       </Route>
