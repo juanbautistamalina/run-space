@@ -59,6 +59,12 @@ function App() {
     setAllRaces(prev => prev.filter(race => race.id !== raceId));
   }
 
+  const handleEditRace = (updatedRace) => {
+    setAllRaces(prev => prev.map(race => 
+      race.id === updatedRace.id ? updatedRace : race
+    ));
+  }
+
   // Función para obtener datos filtrados basados en el filtro actual
   const getFilteredRaces = () => {
     switch (currentFilter) {
@@ -82,9 +88,9 @@ function App() {
       <Route element={<Layout add={handleAddRace} />}>
         <Route path="/" element={<Home 
           races={getFilteredRaces()} 
-          currentFilter={currentFilter} 
           setCurrentFilter={setCurrentFilter}
           onDeleteRace={handleDeleteRace}
+          onEditRace={handleEditRace}
         />} />
         <Route path="/records" element={<Records data={allRaces} />} />
         <Route path="/carreras-futuras" element={<CarrerasFuturas data={allRaces} />} />

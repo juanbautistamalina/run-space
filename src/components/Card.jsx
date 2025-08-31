@@ -4,13 +4,18 @@ import { RiDeleteBin6Fill } from "react-icons/ri";
 import { IoIosPodium } from "react-icons/io";
 import { CiCalendar } from "react-icons/ci";
 import { FaLocationDot } from "react-icons/fa6";
+import EditRaceModal from "./EditRaceModal";
 import "./Card.css"
 
-function Card({ id, title, img, distance, totalTime, pace, position, date, place, isPR, onDelete }) {
+function Card({ id, title, img, distance, totalTime, pace, position, date, place, isPR, onDelete, onEdit }) {
 
     const handleDelete = (raceId) => {
         onDelete(raceId);
     }
+
+    const raceData = {
+        id, title, img, distance, totalTime, pace, position, date, place, isPR
+    };
 
 
     return (
@@ -54,7 +59,9 @@ function Card({ id, title, img, distance, totalTime, pace, position, date, place
 
             <div className="card__actions">
                 <RiDeleteBin6Fill onClick={() => handleDelete(id)} />
-                <TbEditCircle />
+                <EditRaceModal onEdit={onEdit} raceData={raceData}>
+                    <TbEditCircle />
+                </EditRaceModal>
             </div>
         </div>
     )

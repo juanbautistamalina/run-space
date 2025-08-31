@@ -2,7 +2,7 @@ import Card from "../../components/Card"
 import Button from "../../components/Button"
 import "./Home.css"
 
-function Home({ races, setCurrentFilter, onDeleteRace }) {
+function Home({ races, setCurrentFilter, onDeleteRace, onEditRace }) {
 
   const handleFilterChange = (filterType) => {
     setCurrentFilter(filterType);
@@ -34,6 +34,7 @@ function Home({ races, setCurrentFilter, onDeleteRace }) {
             place={race.place}
             isPR={race.isPR}
             onDelete={onDeleteRace}
+            onEdit={onEditRace}
           />)
         }
       </div>
