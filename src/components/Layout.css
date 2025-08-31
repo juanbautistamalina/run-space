@@ -8,8 +8,8 @@
 .layout__sidebar {
   width: 100%;
   order: 2;
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #ddd;
+  background-color: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .layout__main {
@@ -22,14 +22,14 @@
 .layout__header {
   height: auto;
   min-height: 60px;
-  background-color: #ddd;
+  background-color: var(--bg-secondary);
 }
 
 .layout__content {
   flex: 1;
   padding: 0.5rem;
   overflow-y: auto;
-  background-color: #dfdfdf;
+  background-color: var(--bg-primary);
 }
 
 /* Tablet styles */
@@ -42,7 +42,7 @@
     width: 200px;
     order: 1;
     border-top: none;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid var(--border-color);
   }
   
   .layout__main {

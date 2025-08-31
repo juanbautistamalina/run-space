@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Routes, Route } from "react-router"
+import { ThemeProvider } from "./contexts/ThemeContext"
 import Layout from "./components/Layout"
 import Home from "./pages/home/Home"
 import Records from "./pages/records/Records"
@@ -84,18 +85,20 @@ function App() {
   }
 
   return (
-    <Routes>
-      <Route element={<Layout add={handleAddRace} />}>
-        <Route path="/" element={<Home 
-          races={getFilteredRaces()} 
-          setCurrentFilter={setCurrentFilter}
-          onDeleteRace={handleDeleteRace}
-          onEditRace={handleEditRace}
-        />} />
-        <Route path="/records" element={<Records data={allRaces} />} />
-        <Route path="/carreras-futuras" element={<CarrerasFuturas data={allRaces} />} />
-      </Route>
-    </Routes>
+    <ThemeProvider>
+      <Routes>
+        <Route element={<Layout add={handleAddRace} />}>
+          <Route path="/" element={<Home 
+            races={getFilteredRaces()} 
+            setCurrentFilter={setCurrentFilter}
+            onDeleteRace={handleDeleteRace}
+            onEditRace={handleEditRace}
+          />} />
+          <Route path="/records" element={<Records data={allRaces} />} />
+          <Route path="/carreras-futuras" element={<CarrerasFuturas data={allRaces} />} />
+        </Route>
+      </Routes>
+    </ThemeProvider>
   )
 }
 

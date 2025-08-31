@@ -2,6 +2,7 @@ import { PiSneakerMoveFill } from "react-icons/pi";
 import { CiSearch } from "react-icons/ci";
 import { IoAdd } from "react-icons/io5";
 import AddRaceModal from "./AddRaceModal";
+import ThemeToggle from "./ThemeToggle";
 import "./Header.css";
 
 function Header({ add }) {
@@ -18,6 +19,7 @@ function Header({ add }) {
       </div>
 
       <div className="header__button-container">
+        <ThemeToggle />
         <AddRaceModal onAdd={add}>
           <button className="header__button header__button--add">
             <IoAdd />
