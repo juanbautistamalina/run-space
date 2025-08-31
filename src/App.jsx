@@ -8,7 +8,8 @@ import './App.css'
 
 function App() {
 
-  const [races, setRaces] = useState([
+  // Estado principal - contiene todos los datos originales
+  const [allRaces, setAllRaces] = useState([
     {
       id: 1,
       title: "Carrera 10K",
@@ -47,19 +48,46 @@ function App() {
     }
   ]);
 
-  const [allData, setAllData] = useState([ ...races ]);
+  // Estado para el filtro actual aplicado
+  const [currentFilter, setCurrentFilter] = useState('all');
 
   const handleAddRace = (newRace) => {
-    setRaces(prev => [...prev, newRace]);
-    setAllData(prev => [...prev, newRace]);
+    setAllRaces(prev => [...prev, newRace]);
+  }
+
+  const handleDeleteRace = (raceId) => {
+    setAllRaces(prev => prev.filter(race => race.id !== raceId));
+  }
+
+  // Función para obtener datos filtrados basados en el filtro actual
+  const getFilteredRaces = () => {
+    switch (currentFilter) {
+      case '5':
+        return allRaces.filter(race => race.distance === "5");
+      case '10':
+        return allRaces.filter(race => race.distance === "10");
+      case '21':
+        return allRaces.filter(race => race.distance === "21");
+      case '42':
+        return allRaces.filter(race => race.distance === "42");
+      case 'ultra':
+        return allRaces.filter(race => race.distance > "42");
+      default:
+        return allRaces;
+    }
   }
 
   return (
     <Routes>
       <Route element={<Layout add={handleAddRace} />}>
-        <Route path="/" element={<Home data={races} setData={setRaces} allData={allData} />} />
-        <Route path="/records" element={<Records data={races} />} />
-        <Route path="/carreras-futuras" element={<CarrerasFuturas data={races} />} />
+        <Route path="/" element={<Home 
+          races={getFilteredRaces()} 
+          currentFilter={currentFilter} 
+          setCurrentFilter={setCurrentFilter}
+          onDeleteRace={handleDeleteRace}
+        />} />
+        <Route path="/records" element={<Records data={allRaces} />} />
+        <Route path="/carreras-futuras" element={<CarrerasFuturas data={allRaces} />} />
       </Route>
     </Routes>
   )

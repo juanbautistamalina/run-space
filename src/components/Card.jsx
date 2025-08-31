@@ -6,11 +6,10 @@ import { CiCalendar } from "react-icons/ci";
 import { FaLocationDot } from "react-icons/fa6";
 import "./Card.css"
 
-function Card({ id, title, img, distance, totalTime, pace, position, date, place, isPR, data, setData }) {
+function Card({ id, title, img, distance, totalTime, pace, position, date, place, isPR, onDelete }) {
 
-    const handleDelete = (item) => {
-        const updatedData = data.filter(race => race.id !== item);
-        setData(updatedData);
+    const handleDelete = (raceId) => {
+        onDelete(raceId);
     }
 
 
@@ -54,7 +53,7 @@ function Card({ id, title, img, distance, totalTime, pace, position, date, place
             </div>
 
             <div className="card__actions">
-                <RiDeleteBin6Fill onClick={() => handleDelete(id)}/>
+                <RiDeleteBin6Fill onClick={() => handleDelete(id)} />
                 <TbEditCircle />
             </div>
         </div>
