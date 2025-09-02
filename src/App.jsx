@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Routes, Route } from "react-router"
 import { ThemeProvider } from "./contexts/ThemeContext"
 import Layout from "./components/Layout"
@@ -9,8 +9,8 @@ import './App.css'
 
 function App() {
 
-  // Estado principal - contiene todos los datos originales
-  const [allRaces, setAllRaces] = useState([
+  // Datos por defecto
+  const defaultRaces = [
     {
       id: 1,
       title: "Carrera 10K",
@@ -47,7 +47,18 @@ function App() {
       place: "Valencia",
       isPR: true
     }
-  ]);
+  ];
+
+  // Estado principal - carga desde localStorage o usa datos por defecto
+  const [allRaces, setAllRaces] = useState(() => {
+    try {
+      const savedRaces = localStorage.getItem('runspace-races');
+      return savedRaces ? JSON.parse(savedRaces) : defaultRaces;
+    } catch (error) {
+      console.error('Error loading races from localStorage:', error);
+      return defaultRaces;
+    }
+  });
 
   // Estado para el filtro actual aplicado
   const [currentFilter, setCurrentFilter] = useState('all');
@@ -58,6 +69,20 @@ function App() {
   const handleSearch = (term) => {
     setSearchTerm(term);
   };
+
+  // Función para guardar en localStorage
+  const saveToLocalStorage = (races) => {
+    try {
+      localStorage.setItem('runspace-races', JSON.stringify(races));
+    } catch (error) {
+      console.error('Error saving races to localStorage:', error);
+    }
+  };
+
+  // Efecto para guardar cambios en localStorage
+  useEffect(() => {
+    saveToLocalStorage(allRaces);
+  }, [allRaces]);
 
   const handleAddRace = (newRace) => {
     setAllRaces(prev => [...prev, newRace]);
