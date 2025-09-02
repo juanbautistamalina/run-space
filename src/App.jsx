@@ -80,19 +80,19 @@ function App() {
     // Aplicar filtro por distancia
     switch (currentFilter) {
       case '5':
-        filteredRaces = filteredRaces.filter(race => race.distance === "5");
+        filteredRaces = filteredRaces.filter(race => parseFloat(race.distance) === 5);
         break;
       case '10':
-        filteredRaces = filteredRaces.filter(race => race.distance === "10");
+        filteredRaces = filteredRaces.filter(race => parseFloat(race.distance) === 10);
         break;
       case '21':
-        filteredRaces = filteredRaces.filter(race => race.distance === "21");
+        filteredRaces = filteredRaces.filter(race => parseFloat(race.distance) === 21);
         break;
       case '42':
-        filteredRaces = filteredRaces.filter(race => race.distance === "42");
+        filteredRaces = filteredRaces.filter(race => parseFloat(race.distance) === 42);
         break;
       case 'ultra':
-        filteredRaces = filteredRaces.filter(race => race.distance > "42");
+        filteredRaces = filteredRaces.filter(race => parseFloat(race.distance) > 42);
         break;
       default:
         // No filtrar por distancia
