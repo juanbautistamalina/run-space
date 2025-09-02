@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { PiSneakerMoveFill } from "react-icons/pi";
 import { CiSearch } from "react-icons/ci";
 import { IoAdd } from "react-icons/io5";
@@ -5,7 +6,13 @@ import AddRaceModal from "./AddRaceModal";
 import ThemeToggle from "./ThemeToggle";
 import "./Header.css";
 
-function Header({ add }) {
+function Header({ add, onSearch }) {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearchChange = (value) => {
+    setSearchTerm(value);
+    onSearch && onSearch(value);
+  };
   return (
     <header className="header">
       <h1 className="header__title">
@@ -14,7 +21,12 @@ function Header({ add }) {
       </h1>
 
       <div className="header__input-container">
-        <input className="header__input" placeholder="Buscar carreras..." />
+        <input 
+          className="header__input" 
+          placeholder="Buscar carreras..." 
+          value={searchTerm}
+          onChange={(e) => handleSearchChange(e.target.value)}
+        />
         <CiSearch className="header__input-icon" />
       </div>
 

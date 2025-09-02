@@ -52,6 +52,13 @@ function App() {
   // Estado para el filtro actual aplicado
   const [currentFilter, setCurrentFilter] = useState('all');
 
+  // Estado para la búsqueda
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
+
   const handleAddRace = (newRace) => {
     setAllRaces(prev => [...prev, newRace]);
   }
@@ -61,35 +68,53 @@ function App() {
   }
 
   const handleEditRace = (updatedRace) => {
-    setAllRaces(prev => prev.map(race => 
+    setAllRaces(prev => prev.map(race =>
       race.id === updatedRace.id ? updatedRace : race
     ));
   }
 
-  // Función para obtener datos filtrados basados en el filtro actual
+  // Función para obtener datos filtrados basados en el filtro actual y búsqueda
   const getFilteredRaces = () => {
+    let filteredRaces = allRaces;
+
+    // Aplicar filtro por distancia
     switch (currentFilter) {
       case '5':
-        return allRaces.filter(race => race.distance === "5");
+        filteredRaces = filteredRaces.filter(race => race.distance === "5");
+        break;
       case '10':
-        return allRaces.filter(race => race.distance === "10");
+        filteredRaces = filteredRaces.filter(race => race.distance === "10");
+        break;
       case '21':
-        return allRaces.filter(race => race.distance === "21");
+        filteredRaces = filteredRaces.filter(race => race.distance === "21");
+        break;
       case '42':
-        return allRaces.filter(race => race.distance === "42");
+        filteredRaces = filteredRaces.filter(race => race.distance === "42");
+        break;
       case 'ultra':
-        return allRaces.filter(race => race.distance > "42");
+        filteredRaces = filteredRaces.filter(race => race.distance > "42");
+        break;
       default:
-        return allRaces;
+        // No filtrar por distancia
+        break;
     }
+
+    // Aplicar filtro de búsqueda por nombre
+    if (searchTerm.trim()) {
+      filteredRaces = filteredRaces.filter(race =>
+        race.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    return filteredRaces;
   }
 
   return (
     <ThemeProvider>
       <Routes>
-        <Route element={<Layout add={handleAddRace} />}>
-          <Route path="/" element={<Home 
-            races={getFilteredRaces()} 
+        <Route element={<Layout add={handleAddRace} onSearch={handleSearch} />}>
+          <Route path="/" element={<Home
+            races={getFilteredRaces()}
             setCurrentFilter={setCurrentFilter}
             onDeleteRace={handleDeleteRace}
             onEditRace={handleEditRace}
