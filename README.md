@@ -60,6 +60,19 @@ Esa práctica me ayudó a comprender que las carreras no se reducen a números: 
 
 ---
 
+## 🤖 Asistencia de IA
+
+Este proyecto fue desarrollado con la asistencia de diversas herramientas de inteligencia artificial que ayudaron en:
+
+- Generación de código para componentes React
+- Implementación de funcionalidades clave
+- Resolución de problemas y depuración
+- Mejora de la estructura del proyecto
+
+La colaboración con estas herramientas de IA permitió acelerar el desarrollo y mantener altos estándares de código, aunque la dirección creativa y las decisiones de diseño fueron siempre humanas.
+
+---
+
 ## 🔧 Instalación y Configuración
 
 ### Prerrequisitos
