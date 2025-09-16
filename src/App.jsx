@@ -4,7 +4,7 @@ import { ThemeProvider } from "./contexts/ThemeContext"
 import Layout from "./components/Layout"
 import Home from "./pages/home/Home"
 import Records from "./pages/records/Records"
-import CarrerasFuturas from "./pages/carrerasFuturas/CarrerasFuturas.jsx"
+import RaceCalendar from "./pages/carrerasFuturas/RaceCalendar"
 import './App.css'
 
 function App() {
@@ -145,7 +145,7 @@ function App() {
             onEditRace={handleEditRace}
           />} />
           <Route path="/records" element={<Records data={allRaces} />} />
-          <Route path="/carreras-futuras" element={<CarrerasFuturas data={allRaces} />} />
+          <Route path="/carreras-futuras" element={<RaceCalendar data={allRaces} />} />
         </Route>
       </Routes>
     </ThemeProvider>
